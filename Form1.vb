@@ -9,7 +9,11 @@
         txtIPAddress.Text = Split(getStr, ":")(0)
         txtPort.Text = Split(getStr, ":")(1)
         Me.Text = Application.ProductName & " - " & Application.ProductVersion
-        If My.Settings.listPath = "NONE" Then xmlPathSet()
+        If My.Settings.listPath = "NONE" Then
+            MsgBox("需要设置代理列表保存路径，请选择一个吧")
+            xmlPathSet()
+        End If
+        binPath = My.Settings.listPath & "\proxylist.bin"
         readBINConfig()
     End Sub
 
@@ -28,7 +32,6 @@
     End Sub
 
     Private Sub xmlPathSet()
-        MsgBox("需要设置代理列表保存路径，请选择一个吧")
         fbd.ShowNewFolderButton = True
         fbd.Description = "请选择一个存放列表保存的地方"
         fbd.ShowDialog()
@@ -37,6 +40,7 @@
             Exit Sub
         End If
         My.Settings.listPath = fbd.SelectedPath
+        My.Settings.Save()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -62,6 +66,17 @@
         For Each itm As ListViewItem In ListView1.SelectedItems
             txtIPAddress.Text = itm.SubItems(1).Text
             txtPort.Text = itm.SubItems(2).Text
+        Next
+    End Sub
+
+    Private Sub ListView1_MouseClick(sender As Object, e As MouseEventArgs) Handles ListView1.MouseClick
+        If e.Button <> Windows.Forms.MouseButtons.Right Then Exit Sub
+        cmsRightClick.Show(ListView1, e.Location)
+    End Sub
+
+    Private Sub menuDelete_Click(sender As Object, e As EventArgs) Handles menuDelete.Click
+        For Each itm As ListViewItem In ListView1.SelectedItems
+            ListView1.Items.Remove(itm)
         Next
     End Sub
 End Class

@@ -22,6 +22,7 @@ Partial Class Form1
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.txtIPAddress = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -34,6 +35,10 @@ Partial Class Form1
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.fbd = New System.Windows.Forms.FolderBrowserDialog()
+        Me.cmsRightClick = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.menuDelete = New System.Windows.Forms.ToolStripMenuItem()
+        Me.编辑项目ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cmsRightClick.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtIPAddress
@@ -123,6 +128,24 @@ Partial Class Form1
         Me.ColumnHeader3.Text = "代理端口"
         Me.ColumnHeader3.Width = 70
         '
+        'cmsRightClick
+        '
+        Me.cmsRightClick.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuDelete, Me.编辑项目ToolStripMenuItem})
+        Me.cmsRightClick.Name = "cmsRightClick"
+        Me.cmsRightClick.Size = New System.Drawing.Size(153, 70)
+        '
+        'menuDelete
+        '
+        Me.menuDelete.Name = "menuDelete"
+        Me.menuDelete.Size = New System.Drawing.Size(152, 22)
+        Me.menuDelete.Text = "删除项目"
+        '
+        '编辑项目ToolStripMenuItem
+        '
+        Me.编辑项目ToolStripMenuItem.Name = "编辑项目ToolStripMenuItem"
+        Me.编辑项目ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.编辑项目ToolStripMenuItem.Text = "编辑项目"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -142,6 +165,7 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
+        Me.cmsRightClick.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -158,5 +182,8 @@ Partial Class Form1
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
     Friend WithEvents fbd As System.Windows.Forms.FolderBrowserDialog
+    Friend WithEvents cmsRightClick As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents menuDelete As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents 编辑项目ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
