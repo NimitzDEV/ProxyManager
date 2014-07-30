@@ -11,10 +11,7 @@
             Port = .txtPort.Text.Trim
             name = .txtName.Text.Trim
             .Dispose()
-            If IPAddress = "" Or Port = "" Or name = "" Then
-                MsgBox("数据不完整")
-                Return False
-            End If
+            If IPAddress = "" And Port = "" And name = "" Then Return False
             Return True
         End With
     End Function

@@ -36,6 +36,10 @@ Public Class frmMain
         ipAddr = ""
         ipPort = ""
         If showEditDialog(ipAddr, ipPort, nameStr) = False Then Exit Sub
+        If nameStr = "" Or ipAddr = "" Or ipPort = "" Then
+            MsgBox("数据不完整")
+            Exit Sub
+        End If
         Dim listContext As New ListViewItem
         listContext.SubItems(0).Text = nameStr
         listContext.SubItems.Add(ipAddr)
