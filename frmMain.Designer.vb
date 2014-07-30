@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class frmMain
     Inherits System.Windows.Forms.Form
 
     'Form 重写 Dispose，以清理组件列表。
@@ -132,18 +132,18 @@ Partial Class Form1
         '
         Me.cmsRightClick.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuDelete, Me.编辑项目ToolStripMenuItem})
         Me.cmsRightClick.Name = "cmsRightClick"
-        Me.cmsRightClick.Size = New System.Drawing.Size(153, 70)
+        Me.cmsRightClick.Size = New System.Drawing.Size(125, 48)
         '
         'menuDelete
         '
         Me.menuDelete.Name = "menuDelete"
-        Me.menuDelete.Size = New System.Drawing.Size(152, 22)
+        Me.menuDelete.Size = New System.Drawing.Size(124, 22)
         Me.menuDelete.Text = "删除项目"
         '
         '编辑项目ToolStripMenuItem
         '
         Me.编辑项目ToolStripMenuItem.Name = "编辑项目ToolStripMenuItem"
-        Me.编辑项目ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.编辑项目ToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
         Me.编辑项目ToolStripMenuItem.Text = "编辑项目"
         '
         'Form1
