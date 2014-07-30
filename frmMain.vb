@@ -54,7 +54,7 @@
         listContext.SubItems.Add(ipAddr)
         listContext.SubItems.Add(ipPort)
         listContext.EnsureVisible()
-        listContext.Tag = nameStr & ":" & txtIPAddress.Text & ":" & txtPort.Text
+        listContext.Tag = nameStr & ":" & ipAddr & ":" & ipPort
         ListView1.Items.Add(listContext)
     End Sub
 
