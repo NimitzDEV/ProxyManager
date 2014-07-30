@@ -4,22 +4,18 @@ Module mdConfig
     Public binPath As String
     Public Sub writeBINConfig()
         Dim writeString As String = ""
+        Dim FS As New System.IO.FileStream(binPath, FileMode.Create)
+        Dim Bw As New System.IO.BinaryWriter(FS, System.Text.Encoding.Unicode)
         Try
             With frmMain
                 If .ListView1.Items.Count = 0 Then
                     If FileExists(binPath) = True Then DeleteFile(binPath)
                     Exit Sub
                 End If
-                writeString = .ListView1.Items(0).Tag
-                If .ListView1.Items.Count > 1 Then
-                    For i = 1 To .ListView1.Items.Count - 1
-                        writeString &= "§" & .ListView1.Items(i).Tag
-                    Next
-                End If
+                For i = 0 To .ListView1.Items.Count - 1
+                    Bw.Write(.ListView1.Items(i).Tag)
+                Next
             End With
-            Dim FS As New System.IO.FileStream(binPath, FileMode.Create)
-            Dim Bw As New System.IO.BinaryWriter(FS, System.Text.Encoding.Unicode)
-            Bw.Write(writeString)
             Bw.Close()
             FS.Close()
         Catch ex As Exception
@@ -32,17 +28,9 @@ Module mdConfig
             If FileExists(binPath) = False Then Exit Sub
             Dim FS As New System.IO.FileStream(binPath, FileMode.Open)
             Dim Br As New System.IO.BinaryReader(FS, System.Text.Encoding.Unicode)
-            Dim getStr() As String
-            Dim subStr As String
-            getStr = Br.ReadString.Split("§")
-            If getStr.Count = 1 Then
-                addListItem(getStr(0))
-            Else
-                For i = 0 To getStr.Count - 1
-                    subStr = getStr(i)
-                    addListItem(subStr)
-                Next
-            End If
+            Do While Not (FS.Position = FS.Length)
+                addListItem(Br.ReadString)
+            Loop
             Br.Close()
             FS.Close()
         Catch ex As Exception
@@ -56,7 +44,7 @@ Module mdConfig
             addItem.SubItems(0).Text = Split(stringAdd, ":")(0)
             addItem.SubItems.Add(Split(stringAdd, ":")(1))
             addItem.SubItems.Add(Split(stringAdd, ":")(2))
-            addItem.Tag = stringAdd
+            addItem.Tag = stringAdd.Replace(vbCrLf, "")
             .ListView1.Items.Add(addItem)
         End With
     End Sub
