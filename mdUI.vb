@@ -15,4 +15,9 @@
             Return True
         End With
     End Function
+
+    Public Function shortString(ByRef originString As String) As String
+        If Len(originString) > 40 Then shortString = originString.Substring(0, 40) & "..."
+        Return originString
+    End Function
 End Module

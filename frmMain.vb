@@ -27,7 +27,7 @@ Public Class frmMain
                 getEnable = "[已启用]"
                 btnProxyDisable.Enabled = True
         End Select
-        lbInfo.Text = "当前设置为：" & getStr & " - " & getEnable
+        lbInfo.Text = shortString("当前设置为：" & getEnable & " - " & getStr)
     End Sub
 
     Private Sub btnProxyDisable_Click(sender As Object, e As EventArgs) Handles btnProxyDisable.Click
