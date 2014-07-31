@@ -88,6 +88,7 @@
     </Compile>
     <Compile Include="mdProxy.vb" />
     <Compile Include="mdConfig.vb" />
+    <Compile Include="mdTrayProxyListMgr.vb" />
     <Compile Include="mdUI.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

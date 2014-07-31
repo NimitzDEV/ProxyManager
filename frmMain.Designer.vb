@@ -23,6 +23,7 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.lbInfo = New System.Windows.Forms.Label()
         Me.btnProxyDisable = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -30,12 +31,20 @@ Partial Class frmMain
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.fbd = New System.Windows.Forms.FolderBrowserDialog()
         Me.cmsRightClick = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.menuDelete = New System.Windows.Forms.ToolStripMenuItem()
         Me.编辑项目ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.notifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.cmsTray = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.tsmiProxyDisable = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiProxyList = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsmiExit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiAbout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cmsList = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.cmsRightClick.SuspendLayout()
+        Me.cmsTray.SuspendLayout()
         Me.SuspendLayout()
         '
         'lbInfo
@@ -120,6 +129,53 @@ Partial Class frmMain
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "双击条目启用该代理"
         '
+        'notifyIcon
+        '
+        Me.notifyIcon.ContextMenuStrip = Me.cmsTray
+        Me.notifyIcon.Icon = CType(resources.GetObject("notifyIcon.Icon"), System.Drawing.Icon)
+        Me.notifyIcon.Text = "="
+        Me.notifyIcon.Visible = True
+        '
+        'cmsTray
+        '
+        Me.cmsTray.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiProxyDisable, Me.tsmiProxyList, Me.ToolStripMenuItem1, Me.tsmiExit, Me.tsmiAbout})
+        Me.cmsTray.Name = "cmsTray"
+        Me.cmsTray.Size = New System.Drawing.Size(125, 98)
+        '
+        'tsmiProxyDisable
+        '
+        Me.tsmiProxyDisable.Name = "tsmiProxyDisable"
+        Me.tsmiProxyDisable.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiProxyDisable.Text = "关闭代理"
+        '
+        'tsmiProxyList
+        '
+        Me.tsmiProxyList.Name = "tsmiProxyList"
+        Me.tsmiProxyList.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiProxyList.Text = "代理列表"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
+        '
+        'tsmiExit
+        '
+        Me.tsmiExit.Name = "tsmiExit"
+        Me.tsmiExit.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiExit.Text = "退出"
+        '
+        'tsmiAbout
+        '
+        Me.tsmiAbout.Name = "tsmiAbout"
+        Me.tsmiAbout.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiAbout.Text = "关于"
+        '
+        'cmsList
+        '
+        Me.cmsList.Name = "cmsList"
+        Me.cmsList.Size = New System.Drawing.Size(61, 4)
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -137,6 +193,7 @@ Partial Class frmMain
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.cmsRightClick.ResumeLayout(False)
+        Me.cmsTray.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -148,10 +205,17 @@ Partial Class frmMain
     Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents fbd As System.Windows.Forms.FolderBrowserDialog
     Friend WithEvents cmsRightClick As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents menuDelete As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents 编辑项目ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents notifyIcon As System.Windows.Forms.NotifyIcon
+    Friend WithEvents cmsTray As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents tsmiProxyDisable As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiProxyList As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents tsmiExit As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiAbout As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents cmsList As System.Windows.Forms.ContextMenuStrip
 
 End Class
