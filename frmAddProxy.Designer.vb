@@ -35,7 +35,7 @@ Partial Class frmAddProxy
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 79)
+        Me.Label1.Location = New System.Drawing.Point(12, 59)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(53, 12)
         Me.Label1.TabIndex = 0
@@ -43,7 +43,7 @@ Partial Class frmAddProxy
         '
         'txtIPAddress
         '
-        Me.txtIPAddress.Location = New System.Drawing.Point(14, 107)
+        Me.txtIPAddress.Location = New System.Drawing.Point(14, 74)
         Me.txtIPAddress.Name = "txtIPAddress"
         Me.txtIPAddress.Size = New System.Drawing.Size(253, 21)
         Me.txtIPAddress.TabIndex = 2
@@ -51,7 +51,7 @@ Partial Class frmAddProxy
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 147)
+        Me.Label2.Location = New System.Drawing.Point(12, 112)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 12)
         Me.Label2.TabIndex = 2
@@ -59,14 +59,14 @@ Partial Class frmAddProxy
         '
         'txtPort
         '
-        Me.txtPort.Location = New System.Drawing.Point(14, 179)
+        Me.txtPort.Location = New System.Drawing.Point(14, 127)
         Me.txtPort.Name = "txtPort"
         Me.txtPort.Size = New System.Drawing.Size(253, 21)
         Me.txtPort.TabIndex = 3
         '
         'btnOK
         '
-        Me.btnOK.Location = New System.Drawing.Point(111, 221)
+        Me.btnOK.Location = New System.Drawing.Point(111, 163)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(75, 23)
         Me.btnOK.TabIndex = 4
@@ -75,7 +75,7 @@ Partial Class frmAddProxy
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(192, 221)
+        Me.btnCancel.Location = New System.Drawing.Point(192, 163)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 5
@@ -93,7 +93,7 @@ Partial Class frmAddProxy
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(14, 41)
+        Me.txtName.Location = New System.Drawing.Point(14, 24)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(253, 21)
         Me.txtName.TabIndex = 1
@@ -102,7 +102,7 @@ Partial Class frmAddProxy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(279, 257)
+        Me.ClientSize = New System.Drawing.Size(279, 201)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnCancel)
