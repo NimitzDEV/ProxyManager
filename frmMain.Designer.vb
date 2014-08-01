@@ -37,7 +37,6 @@ Partial Class frmMain
         Me.Label1 = New System.Windows.Forms.Label()
         Me.notifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.cmsTray = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.tsmiProxyDisable = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiProxyList = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsmiExit = New System.Windows.Forms.ToolStripMenuItem()
@@ -140,37 +139,32 @@ Partial Class frmMain
         '
         'cmsTray
         '
-        Me.cmsTray.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiProxyDisable, Me.tsmiProxyList, Me.ToolStripMenuItem1, Me.tsmiExit, Me.tsmiAbout})
+        Me.cmsTray.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiProxyList, Me.ToolStripMenuItem1, Me.tsmiExit, Me.tsmiAbout})
         Me.cmsTray.Name = "cmsTray"
-        Me.cmsTray.Size = New System.Drawing.Size(125, 98)
-        '
-        'tsmiProxyDisable
-        '
-        Me.tsmiProxyDisable.Name = "tsmiProxyDisable"
-        Me.tsmiProxyDisable.Size = New System.Drawing.Size(152, 22)
-        Me.tsmiProxyDisable.Text = "关闭代理"
+        Me.cmsTray.Size = New System.Drawing.Size(125, 76)
         '
         'tsmiProxyList
         '
         Me.tsmiProxyList.Name = "tsmiProxyList"
-        Me.tsmiProxyList.Size = New System.Drawing.Size(152, 22)
-        Me.tsmiProxyList.Text = "代理列表"
+        Me.tsmiProxyList.Size = New System.Drawing.Size(124, 22)
+        Me.tsmiProxyList.Text = "代理选择"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(121, 6)
         '
         'tsmiExit
         '
         Me.tsmiExit.Name = "tsmiExit"
-        Me.tsmiExit.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiExit.Size = New System.Drawing.Size(124, 22)
         Me.tsmiExit.Text = "退出"
         '
         'tsmiAbout
         '
+        Me.tsmiAbout.Image = CType(resources.GetObject("tsmiAbout.Image"), System.Drawing.Image)
         Me.tsmiAbout.Name = "tsmiAbout"
-        Me.tsmiAbout.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiAbout.Size = New System.Drawing.Size(124, 22)
         Me.tsmiAbout.Text = "关于"
         '
         'cmsList
@@ -210,6 +204,7 @@ Partial Class frmMain
         Me.Controls.Add(Me.btnProxyDisable)
         Me.Controls.Add(Me.lbInfo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmMain"
@@ -234,7 +229,6 @@ Partial Class frmMain
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents notifyIcon As System.Windows.Forms.NotifyIcon
     Friend WithEvents cmsTray As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents tsmiProxyDisable As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiProxyList As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents tsmiExit As System.Windows.Forms.ToolStripMenuItem

@@ -141,6 +141,21 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="res\main.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\green.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\red.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

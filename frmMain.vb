@@ -13,7 +13,6 @@ Public Class frmMain
         binPath = binFolder & "proxylist.bin"
         readBINConfig()
         updateStatus()
-        Me.Text = Application.ProductName & " - " & Application.ProductVersion
     End Sub
 
     Private Sub updateStatus()
@@ -25,15 +24,15 @@ Public Class frmMain
             Case 0
                 getEnable = "[未启用]"
                 btnProxyDisable.Enabled = False
-                tsmiProxyDisable.Checked = False
-
+                notifyIcon.Icon = My.Resources.red
             Case 1
                 getEnable = "[已启用]"
                 btnProxyDisable.Enabled = True
-                tsmiProxyDisable.Checked = True
-
+                notifyIcon.Icon = My.Resources.green
         End Select
         lbInfo.Text = shortString("当前设置为：" & getEnable & " - " & getStr)
+        Me.Text = Application.ProductName & " - " & Application.ProductVersion
+        notifyIcon.Text = Me.Text & vbCrLf & lbInfo.Text
     End Sub
 
     Private Sub btnProxyDisable_Click(sender As Object, e As EventArgs) Handles btnProxyDisable.Click
@@ -89,7 +88,7 @@ Public Class frmMain
 
 
     Private Sub tsmiExit_Click(sender As Object, e As EventArgs) Handles tsmiExit.Click
-        appExit()
+        Me.Close()
     End Sub
 
 
@@ -103,15 +102,6 @@ Public Class frmMain
         End If
         Return True
     End Function
-
-    Private Sub tsmiProxyEnable_Click(sender As Object, e As EventArgs) Handles tsmiProxyDisable.Click
-        If tsmiProxyList.Enabled = True Then
-            cancelProxy()
-            updateStatus()
-        Else
-
-        End If
-    End Sub
 
     Private Sub tsmiProxyList_Click(sender As Object, e As EventArgs) Handles tsmiProxyList.Click
         cmsList.Show(MousePosition.X, MousePosition.Y)
