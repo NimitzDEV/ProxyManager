@@ -1,7 +1,5 @@
 ﻿Imports Microsoft.VisualBasic.FileIO.FileSystem
 Public Class frmMain
-    Dim getStr As String
-    Dim getEnable As String
     Dim binFolder As String
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         If appExit() = False Then e.Cancel = True
@@ -13,26 +11,6 @@ Public Class frmMain
         binPath = binFolder & "proxylist.bin"
         readBINConfig()
         updateStatus()
-    End Sub
-
-    Private Sub updateStatus()
-        updateTrayList()
-        getStr = funcGetRegeditValue("ProxyServer")
-        If getStr = "" Then getStr = "无"
-        getEnable = funcGetRegeditValue("ProxyEnable")
-        Select Case getEnable
-            Case 0
-                getEnable = "[未启用]"
-                btnProxyDisable.Enabled = False
-                notifyIcon.Icon = My.Resources.red
-            Case 1
-                getEnable = "[已启用]"
-                btnProxyDisable.Enabled = True
-                notifyIcon.Icon = My.Resources.green
-        End Select
-        lbInfo.Text = shortString("当前设置为：" & getEnable & " - " & getStr)
-        Me.Text = Application.ProductName & " - " & Application.ProductVersion
-        notifyIcon.Text = Me.Text & vbCrLf & lbInfo.Text
     End Sub
 
     Private Sub btnProxyDisable_Click(sender As Object, e As EventArgs) Handles btnProxyDisable.Click

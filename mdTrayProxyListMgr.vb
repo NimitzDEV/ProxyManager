@@ -1,4 +1,6 @@
 ﻿Module mdTrayProxyListMgr
+    Dim ipAddress As String
+    Dim ipPort As String
     Public Sub updateTrayList()
         Dim tagStr As String
         With frmMain
@@ -13,6 +15,16 @@
     End Sub
 
     Public Sub listEvenHandler(sender As Object, e As EventArgs)
-        MsgBox(sender.tag)
+        If sender.tag = "proxyenable" Then
+            cancelProxy()
+            updateStatus()
+            appMsg("代理已关闭")
+            Exit Sub
+        End If
+        ipAddress = Split(sender.tag, ":")(1)
+        ipPort = Split(sender.tag, ":")(2)
+        setProxy(ipAddress, ipPort)
+        appMsg("代理 ： " & sender.tag & " 已启用")
+        updateStatus()
     End Sub
 End Module
