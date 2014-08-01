@@ -4,18 +4,20 @@ Public Class frmMain
     Dim getEnable As String
     Dim binFolder As String
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If appExit() = False Then e.Cancel = True
         writeBINConfig()
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         binFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\Proxy Manager\"
         If DirectoryExists(binFolder) = False Then MkDir(binFolder)
         binPath = binFolder & "proxylist.bin"
+        readBINConfig()
         updateStatus()
         Me.Text = Application.ProductName & " - " & Application.ProductVersion
-        readBINConfig()
     End Sub
 
     Private Sub updateStatus()
+        updateTrayList()
         getStr = funcGetRegeditValue("ProxyServer")
         If getStr = "" Then getStr = "无"
         getEnable = funcGetRegeditValue("ProxyEnable")
@@ -23,9 +25,13 @@ Public Class frmMain
             Case 0
                 getEnable = "[未启用]"
                 btnProxyDisable.Enabled = False
+                tsmiProxyDisable.Checked = False
+
             Case 1
                 getEnable = "[已启用]"
                 btnProxyDisable.Enabled = True
+                tsmiProxyDisable.Checked = True
+
         End Select
         lbInfo.Text = shortString("当前设置为：" & getEnable & " - " & getStr)
     End Sub
@@ -34,6 +40,7 @@ Public Class frmMain
         cancelProxy()
         updateStatus()
     End Sub
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim nameStr, ipAddr, ipPort As String
@@ -52,6 +59,7 @@ Public Class frmMain
         listContext.EnsureVisible()
         listContext.Tag = nameStr & ":" & ipAddr & ":" & ipPort
         ListView1.Items.Add(listContext)
+        updateTrayList()
     End Sub
 
     Private Sub ListView1_DoubleClick(sender As Object, e As EventArgs) Handles ListView1.DoubleClick
@@ -74,4 +82,46 @@ Public Class frmMain
         Next
     End Sub
 
+    Private Sub notifyIcon_MouseClick(sender As Object, e As MouseEventArgs) Handles notifyIcon.MouseClick
+        If e.Button <> Windows.Forms.MouseButtons.Left Then Exit Sub
+        Me.Visible = Not Me.Visible
+    End Sub
+
+
+    Private Sub tsmiExit_Click(sender As Object, e As EventArgs) Handles tsmiExit.Click
+        appExit()
+    End Sub
+
+
+    Private Function appExit() As Boolean
+        updateStatus()
+        If MsgBox("确定退出？", MsgBoxStyle.OkCancel, "退出") = MsgBoxResult.Cancel Then Return False
+        If btnProxyDisable.Enabled = True Then
+            If MsgBox("是否关闭代理？", MsgBoxStyle.YesNo, "当前正在使用代理") = MsgBoxResult.Yes Then
+                cancelProxy()
+            End If
+        End If
+        Return True
+    End Function
+
+    Private Sub tsmiProxyEnable_Click(sender As Object, e As EventArgs) Handles tsmiProxyDisable.Click
+        If tsmiProxyList.Enabled = True Then
+            cancelProxy()
+            updateStatus()
+        Else
+
+        End If
+    End Sub
+
+    Private Sub tsmiProxyList_Click(sender As Object, e As EventArgs) Handles tsmiProxyList.Click
+        cmsList.Show(MousePosition.X, MousePosition.Y)
+    End Sub
+
+    Private Sub tsmiAbout_Click(sender As Object, e As EventArgs) Handles tsmiAbout.Click
+        frmAbout.Show()
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        frmAbout.Show()
+    End Sub
 End Class
