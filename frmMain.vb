@@ -94,4 +94,19 @@ Public Class frmMain
     End Sub
 
 
+    Private Sub menuEdit_Click(sender As Object, e As EventArgs) Handles menuEdit.Click
+        Dim editAddress As String
+        Dim editPort As String
+        Dim editName As String
+        editName = ListView1.SelectedItems.Item(0).SubItems(0).Text
+        editAddress = ListView1.SelectedItems.Item(0).SubItems(1).Text
+        editPort = ListView1.SelectedItems.Item(0).SubItems(2).Text
+        If showEditDialog(editAddress, editPort, editName, editAddress, editPort, editName) = False Then
+            MsgBox("取消或者数据不完整")
+            Exit Sub
+        End If
+        ListView1.SelectedItems.Item(0).SubItems(0).Text = editName
+        ListView1.SelectedItems.Item(0).SubItems(1).Text = editAddress
+        ListView1.SelectedItems.Item(0).SubItems(2).Text = editPort
+    End Sub
 End Class

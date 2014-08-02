@@ -105,7 +105,7 @@ Partial Class frmMain
         '
         'cmsRightClick
         '
-        Me.cmsRightClick.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuDelete, Me.menuEdit})
+        Me.cmsRightClick.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuEdit, Me.menuDelete})
         Me.cmsRightClick.Name = "cmsRightClick"
         Me.cmsRightClick.Size = New System.Drawing.Size(125, 48)
         '
@@ -118,7 +118,7 @@ Partial Class frmMain
         'menuEdit
         '
         Me.menuEdit.Name = "menuEdit"
-        Me.menuEdit.Size = New System.Drawing.Size(124, 22)
+        Me.menuEdit.Size = New System.Drawing.Size(152, 22)
         Me.menuEdit.Text = "编辑项目"
         '
         'Label1
