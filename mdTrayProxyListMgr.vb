@@ -24,7 +24,7 @@
         ipAddress = Split(sender.tag, ":")(1)
         ipPort = Split(sender.tag, ":")(2)
         setProxy(ipAddress, ipPort)
-        appMsg("代理 ： " & sender.tag & " 已启用")
+        appMsg("代理: " & sender.tag & " 已启用")
         updateStatus()
     End Sub
 End Module

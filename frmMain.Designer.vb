@@ -33,7 +33,7 @@ Partial Class frmMain
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.cmsRightClick = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.menuDelete = New System.Windows.Forms.ToolStripMenuItem()
-        Me.编辑项目ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuEdit = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.notifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.cmsTray = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -105,7 +105,7 @@ Partial Class frmMain
         '
         'cmsRightClick
         '
-        Me.cmsRightClick.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuDelete, Me.编辑项目ToolStripMenuItem})
+        Me.cmsRightClick.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuDelete, Me.menuEdit})
         Me.cmsRightClick.Name = "cmsRightClick"
         Me.cmsRightClick.Size = New System.Drawing.Size(125, 48)
         '
@@ -115,11 +115,11 @@ Partial Class frmMain
         Me.menuDelete.Size = New System.Drawing.Size(124, 22)
         Me.menuDelete.Text = "删除项目"
         '
-        '编辑项目ToolStripMenuItem
+        'menuEdit
         '
-        Me.编辑项目ToolStripMenuItem.Name = "编辑项目ToolStripMenuItem"
-        Me.编辑项目ToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
-        Me.编辑项目ToolStripMenuItem.Text = "编辑项目"
+        Me.menuEdit.Name = "menuEdit"
+        Me.menuEdit.Size = New System.Drawing.Size(124, 22)
+        Me.menuEdit.Text = "编辑项目"
         '
         'Label1
         '
@@ -147,7 +147,7 @@ Partial Class frmMain
         '
         Me.tsmiProxyList.Name = "tsmiProxyList"
         Me.tsmiProxyList.Size = New System.Drawing.Size(124, 22)
-        Me.tsmiProxyList.Text = "代理选择"
+        Me.tsmiProxyList.Text = "代理设置"
         '
         'ToolStripMenuItem1
         '
@@ -206,7 +206,6 @@ Partial Class frmMain
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MinimizeBox = False
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
@@ -225,7 +224,7 @@ Partial Class frmMain
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
     Friend WithEvents cmsRightClick As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents menuDelete As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents 编辑项目ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuEdit As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents notifyIcon As System.Windows.Forms.NotifyIcon
     Friend WithEvents cmsTray As System.Windows.Forms.ContextMenuStrip
