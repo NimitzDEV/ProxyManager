@@ -1,4 +1,5 @@
-﻿Module mdUI
+﻿Imports System.Text.RegularExpressions.Regex
+Module mdUI
     Dim getStr As String
     Dim getEnable As String
     Public Function showEditDialog(ByRef IPAddress As String, ByRef Port As String, ByRef name As String, Optional defaultAddress As String = "", Optional defaultPort As String = "", Optional defaultName As String = "") As Boolean
@@ -50,4 +51,15 @@
             .notifyIcon.Text = .Text & vbCrLf & .lbInfo.Text
         End With
     End Sub
+
+    Public Function checkAddress(ByVal inputAddress As String, ByVal inputPort As String) As Boolean
+        If inputAddress = "" Or inputPort = "" Then Return False
+        Dim address As Boolean = False
+        Dim port As Boolean = False
+        If IsMatch(inputAddress, "^http(s)?:\/\/([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$") _
+            Or IsMatch(inputAddress, "^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])$") Then address = True
+            If Int(inputPort) > -1 And Int(inputPort) < 65536 Then port = True
+            Return address And port
+    End Function
+
 End Module

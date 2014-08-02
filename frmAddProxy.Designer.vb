@@ -103,6 +103,7 @@ Partial Class frmAddProxy
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(279, 201)
+        Me.ControlBox = False
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnCancel)
@@ -113,6 +114,7 @@ Partial Class frmAddProxy
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmAddProxy"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "数据编辑"
         Me.ResumeLayout(False)

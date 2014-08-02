@@ -28,18 +28,4 @@ Module mdProxy
         funcSetRegeditValue("ProxyEnable", "0", RegistryValueKind.DWord)
         Call internetsetoption(0, 39, 0, 0)
     End Sub
-    Public Function checkIPAddress(ByVal IPAddress As String, ByVal Port As String) As Boolean
-        Dim checkIncrease As Integer = 0
-        Try
-            For i = 0 To 3
-                If Split(IPAddress, ".")(i) > -1 And Split(IPAddress, ".")(i) < 255 Then checkIncrease += 1
-            Next
-            If InStr(IPAddress, ".") < 4 Then Return False
-            If checkIncrease < 4 Then Return False
-            If Int(Port) < 0 Or Int(Port) > 65535 Then Return False
-            Return True
-        Catch ex As Exception
-            Return False
-        End Try
-    End Function
 End Module

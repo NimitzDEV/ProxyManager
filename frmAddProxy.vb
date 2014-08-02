@@ -12,6 +12,10 @@
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
+        If checkAddress(txtIPAddress.Text, txtPort.Text) = False Then
+            MsgBox("地址或端口数值有误")
+            Exit Sub
+        End If
         Me.Close()
     End Sub
 End Class
