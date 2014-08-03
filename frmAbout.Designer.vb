@@ -22,10 +22,8 @@ Partial Class frmAbout
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.LinkLabel10 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel8 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
@@ -33,20 +31,10 @@ Partial Class frmAbout
         Me.btnClose = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'LinkLabel10
-        '
-        Me.LinkLabel10.AutoSize = True
-        Me.LinkLabel10.Location = New System.Drawing.Point(256, 112)
-        Me.LinkLabel10.Name = "LinkLabel10"
-        Me.LinkLabel10.Size = New System.Drawing.Size(77, 12)
-        Me.LinkLabel10.TabIndex = 15
-        Me.LinkLabel10.TabStop = True
-        Me.LinkLabel10.Text = "支付宝捐助我"
-        '
         'LinkLabel9
         '
         Me.LinkLabel9.AutoSize = True
-        Me.LinkLabel9.Location = New System.Drawing.Point(203, 112)
+        Me.LinkLabel9.Location = New System.Drawing.Point(150, 112)
         Me.LinkLabel9.Name = "LinkLabel9"
         Me.LinkLabel9.Size = New System.Drawing.Size(47, 12)
         Me.LinkLabel9.TabIndex = 14
@@ -56,27 +44,17 @@ Partial Class frmAbout
         'LinkLabel8
         '
         Me.LinkLabel8.AutoSize = True
-        Me.LinkLabel8.Location = New System.Drawing.Point(168, 112)
+        Me.LinkLabel8.Location = New System.Drawing.Point(115, 112)
         Me.LinkLabel8.Name = "LinkLabel8"
         Me.LinkLabel8.Size = New System.Drawing.Size(29, 12)
         Me.LinkLabel8.TabIndex = 13
         Me.LinkLabel8.TabStop = True
         Me.LinkLabel8.Text = "知乎"
         '
-        'LinkLabel3
-        '
-        Me.LinkLabel3.AutoSize = True
-        Me.LinkLabel3.Location = New System.Drawing.Point(109, 112)
-        Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.Size = New System.Drawing.Size(53, 12)
-        Me.LinkLabel3.TabIndex = 10
-        Me.LinkLabel3.TabStop = True
-        Me.LinkLabel3.Text = "腾讯微博"
-        '
         'LinkLabel2
         '
         Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(50, 112)
+        Me.LinkLabel2.Location = New System.Drawing.Point(56, 112)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(53, 12)
         Me.LinkLabel2.TabIndex = 9
@@ -97,7 +75,7 @@ Partial Class frmAbout
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(339, 112)
+        Me.LinkLabel1.Location = New System.Drawing.Point(204, 112)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(41, 12)
         Me.LinkLabel1.TabIndex = 17
@@ -117,7 +95,7 @@ Partial Class frmAbout
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(170, 139)
+        Me.btnClose.Location = New System.Drawing.Point(286, 107)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 23)
         Me.btnClose.TabIndex = 19
@@ -128,16 +106,14 @@ Partial Class frmAbout
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(430, 171)
+        Me.ClientSize = New System.Drawing.Size(430, 152)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.LinkLabel10)
         Me.Controls.Add(Me.LinkLabel9)
         Me.Controls.Add(Me.LinkLabel8)
-        Me.Controls.Add(Me.LinkLabel3)
         Me.Controls.Add(Me.LinkLabel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmAbout"
@@ -147,10 +123,8 @@ Partial Class frmAbout
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents LinkLabel10 As System.Windows.Forms.LinkLabel
     Friend WithEvents LinkLabel9 As System.Windows.Forms.LinkLabel
     Friend WithEvents LinkLabel8 As System.Windows.Forms.LinkLabel
-    Friend WithEvents LinkLabel3 As System.Windows.Forms.LinkLabel
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
