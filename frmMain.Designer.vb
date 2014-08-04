@@ -32,8 +32,8 @@ Partial Class frmMain
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.cmsRightClick = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.menuDelete = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuEdit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuDelete = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.notifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.cmsTray = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -50,152 +50,116 @@ Partial Class frmMain
         '
         'lbInfo
         '
-        Me.lbInfo.AutoSize = True
-        Me.lbInfo.Location = New System.Drawing.Point(12, 12)
+        resources.ApplyResources(Me.lbInfo, "lbInfo")
         Me.lbInfo.Name = "lbInfo"
-        Me.lbInfo.Size = New System.Drawing.Size(23, 12)
-        Me.lbInfo.TabIndex = 1
-        Me.lbInfo.Text = "-/-"
         '
         'btnProxyDisable
         '
-        Me.btnProxyDisable.Location = New System.Drawing.Point(359, 12)
+        resources.ApplyResources(Me.btnProxyDisable, "btnProxyDisable")
         Me.btnProxyDisable.Name = "btnProxyDisable"
-        Me.btnProxyDisable.Size = New System.Drawing.Size(75, 23)
-        Me.btnProxyDisable.TabIndex = 5
-        Me.btnProxyDisable.Text = "关闭代理"
         Me.btnProxyDisable.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(359, 41)
+        resources.ApplyResources(Me.Button1, "Button1")
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "添加数据"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'ListView1
         '
+        resources.ApplyResources(Me.ListView1, "ListView1")
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(12, 70)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(422, 210)
-        Me.ListView1.TabIndex = 7
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
         'ColumnHeader1
         '
-        Me.ColumnHeader1.Text = "代理名称"
-        Me.ColumnHeader1.Width = 180
+        resources.ApplyResources(Me.ColumnHeader1, "ColumnHeader1")
         '
         'ColumnHeader2
         '
-        Me.ColumnHeader2.Text = "代理IP"
-        Me.ColumnHeader2.Width = 160
+        resources.ApplyResources(Me.ColumnHeader2, "ColumnHeader2")
         '
         'ColumnHeader3
         '
-        Me.ColumnHeader3.Text = "代理端口"
-        Me.ColumnHeader3.Width = 70
+        resources.ApplyResources(Me.ColumnHeader3, "ColumnHeader3")
         '
         'cmsRightClick
         '
+        resources.ApplyResources(Me.cmsRightClick, "cmsRightClick")
         Me.cmsRightClick.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuEdit, Me.menuDelete})
         Me.cmsRightClick.Name = "cmsRightClick"
-        Me.cmsRightClick.Size = New System.Drawing.Size(125, 48)
-        '
-        'menuDelete
-        '
-        Me.menuDelete.Name = "menuDelete"
-        Me.menuDelete.Size = New System.Drawing.Size(124, 22)
-        Me.menuDelete.Text = "删除项目"
         '
         'menuEdit
         '
+        resources.ApplyResources(Me.menuEdit, "menuEdit")
         Me.menuEdit.Name = "menuEdit"
-        Me.menuEdit.Size = New System.Drawing.Size(152, 22)
-        Me.menuEdit.Text = "编辑项目"
+        '
+        'menuDelete
+        '
+        resources.ApplyResources(Me.menuDelete, "menuDelete")
+        Me.menuDelete.Name = "menuDelete"
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 52)
+        resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(113, 12)
-        Me.Label1.TabIndex = 8
-        Me.Label1.Text = "双击条目启用该代理"
         '
         'notifyIcon
         '
+        resources.ApplyResources(Me.notifyIcon, "notifyIcon")
         Me.notifyIcon.ContextMenuStrip = Me.cmsTray
-        Me.notifyIcon.Icon = CType(resources.GetObject("notifyIcon.Icon"), System.Drawing.Icon)
-        Me.notifyIcon.Text = "="
-        Me.notifyIcon.Visible = True
         '
         'cmsTray
         '
+        resources.ApplyResources(Me.cmsTray, "cmsTray")
         Me.cmsTray.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiProxyList, Me.ToolStripMenuItem1, Me.tsmiExit, Me.tsmiAbout})
         Me.cmsTray.Name = "cmsTray"
-        Me.cmsTray.Size = New System.Drawing.Size(125, 76)
         '
         'tsmiProxyList
         '
+        resources.ApplyResources(Me.tsmiProxyList, "tsmiProxyList")
         Me.tsmiProxyList.Name = "tsmiProxyList"
-        Me.tsmiProxyList.Size = New System.Drawing.Size(124, 22)
-        Me.tsmiProxyList.Text = "代理设置"
         '
         'ToolStripMenuItem1
         '
+        resources.ApplyResources(Me.ToolStripMenuItem1, "ToolStripMenuItem1")
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(121, 6)
         '
         'tsmiExit
         '
+        resources.ApplyResources(Me.tsmiExit, "tsmiExit")
         Me.tsmiExit.Name = "tsmiExit"
-        Me.tsmiExit.Size = New System.Drawing.Size(124, 22)
-        Me.tsmiExit.Text = "退出"
         '
         'tsmiAbout
         '
-        Me.tsmiAbout.Image = CType(resources.GetObject("tsmiAbout.Image"), System.Drawing.Image)
+        resources.ApplyResources(Me.tsmiAbout, "tsmiAbout")
         Me.tsmiAbout.Name = "tsmiAbout"
-        Me.tsmiAbout.Size = New System.Drawing.Size(124, 22)
-        Me.tsmiAbout.Text = "关于"
         '
         'cmsList
         '
+        resources.ApplyResources(Me.cmsList, "cmsList")
         Me.cmsList.Name = "cmsList"
-        Me.cmsList.Size = New System.Drawing.Size(61, 4)
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 290)
+        resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(233, 12)
-        Me.Label2.TabIndex = 9
-        Me.Label2.Text = "点击右下角的图标可以显示或者隐藏主界面"
         '
         'LinkLabel1
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(405, 290)
+        resources.ApplyResources(Me.LinkLabel1, "LinkLabel1")
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(29, 12)
-        Me.LinkLabel1.TabIndex = 10
         Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "关于"
         '
         'frmMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(446, 311)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -204,11 +168,8 @@ Partial Class frmMain
         Me.Controls.Add(Me.btnProxyDisable)
         Me.Controls.Add(Me.lbInfo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frmMain"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
         Me.cmsRightClick.ResumeLayout(False)
         Me.cmsTray.ResumeLayout(False)
         Me.ResumeLayout(False)

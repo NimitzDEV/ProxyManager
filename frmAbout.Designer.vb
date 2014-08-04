@@ -22,6 +22,7 @@ Partial Class frmAbout
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAbout))
         Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel8 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
@@ -33,80 +34,50 @@ Partial Class frmAbout
         '
         'LinkLabel9
         '
-        Me.LinkLabel9.AutoSize = True
-        Me.LinkLabel9.Location = New System.Drawing.Point(150, 112)
+        resources.ApplyResources(Me.LinkLabel9, "LinkLabel9")
         Me.LinkLabel9.Name = "LinkLabel9"
-        Me.LinkLabel9.Size = New System.Drawing.Size(47, 12)
-        Me.LinkLabel9.TabIndex = 14
         Me.LinkLabel9.TabStop = True
-        Me.LinkLabel9.Text = "Google+"
         '
         'LinkLabel8
         '
-        Me.LinkLabel8.AutoSize = True
-        Me.LinkLabel8.Location = New System.Drawing.Point(115, 112)
+        resources.ApplyResources(Me.LinkLabel8, "LinkLabel8")
         Me.LinkLabel8.Name = "LinkLabel8"
-        Me.LinkLabel8.Size = New System.Drawing.Size(29, 12)
-        Me.LinkLabel8.TabIndex = 13
         Me.LinkLabel8.TabStop = True
-        Me.LinkLabel8.Text = "知乎"
         '
         'LinkLabel2
         '
-        Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(56, 112)
+        resources.ApplyResources(Me.LinkLabel2, "LinkLabel2")
         Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(53, 12)
-        Me.LinkLabel2.TabIndex = 9
         Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "新浪微博"
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("微软雅黑", 42.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label1.Location = New System.Drawing.Point(44, 26)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(336, 75)
-        Me.Label1.TabIndex = 16
-        Me.Label1.Text = "NimitzDEV"
         '
         'LinkLabel1
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(204, 112)
+        resources.ApplyResources(Me.LinkLabel1, "LinkLabel1")
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(41, 12)
-        Me.LinkLabel1.TabIndex = 17
         Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "源代码"
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label2.Location = New System.Drawing.Point(55, 26)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(107, 16)
-        Me.Label2.TabIndex = 18
-        Me.Label2.Text = "Powered by "
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(286, 107)
+        resources.ApplyResources(Me.btnClose, "btnClose")
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(75, 23)
-        Me.btnClose.TabIndex = 19
-        Me.btnClose.Text = "关闭"
         Me.btnClose.UseVisualStyleBackColor = True
         '
         'frmAbout
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(430, 152)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label2)
@@ -117,8 +88,6 @@ Partial Class frmAbout
         Me.Controls.Add(Me.LinkLabel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmAbout"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "关于"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

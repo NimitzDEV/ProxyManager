@@ -115,8 +115,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAbout.en.resx">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddProxy.en.resx">
+      <DependentUpon>frmAddProxy.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddProxy.resx">
       <DependentUpon>frmAddProxy.vb</DependentUpon>
@@ -124,7 +130,13 @@
     <EmbeddedResource Include="frmAppMsg.resx">
       <DependentUpon>frmAppMsg.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.en.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.zh-CN.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">

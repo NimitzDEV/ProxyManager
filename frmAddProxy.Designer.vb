@@ -22,6 +22,7 @@ Partial Class frmAddProxy
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAddProxy))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtIPAddress = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -34,75 +35,50 @@ Partial Class frmAddProxy
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 59)
+        resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 12)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "代理地址"
         '
         'txtIPAddress
         '
-        Me.txtIPAddress.Location = New System.Drawing.Point(14, 74)
+        resources.ApplyResources(Me.txtIPAddress, "txtIPAddress")
         Me.txtIPAddress.Name = "txtIPAddress"
-        Me.txtIPAddress.Size = New System.Drawing.Size(253, 21)
-        Me.txtIPAddress.TabIndex = 2
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 112)
+        resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(53, 12)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "代理端口"
         '
         'txtPort
         '
-        Me.txtPort.Location = New System.Drawing.Point(14, 127)
+        resources.ApplyResources(Me.txtPort, "txtPort")
         Me.txtPort.Name = "txtPort"
-        Me.txtPort.Size = New System.Drawing.Size(253, 21)
-        Me.txtPort.TabIndex = 3
         '
         'btnOK
         '
-        Me.btnOK.Location = New System.Drawing.Point(111, 163)
+        resources.ApplyResources(Me.btnOK, "btnOK")
         Me.btnOK.Name = "btnOK"
-        Me.btnOK.Size = New System.Drawing.Size(75, 23)
-        Me.btnOK.TabIndex = 4
-        Me.btnOK.Text = "确认"
         Me.btnOK.UseVisualStyleBackColor = True
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(192, 163)
+        resources.ApplyResources(Me.btnCancel, "btnCancel")
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancel.TabIndex = 5
-        Me.btnCancel.Text = "取消"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 9)
+        resources.ApplyResources(Me.Label3, "Label3")
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(29, 12)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "名称"
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(14, 24)
+        resources.ApplyResources(Me.txtName, "txtName")
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(253, 21)
-        Me.txtName.TabIndex = 1
         '
         'frmAddProxy
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(279, 201)
         Me.ControlBox = False
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.Label3)
@@ -115,8 +91,6 @@ Partial Class frmAddProxy
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmAddProxy"
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "数据编辑"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
