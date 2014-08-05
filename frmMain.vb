@@ -108,5 +108,7 @@ Public Class frmMain
         ListView1.SelectedItems.Item(0).SubItems(0).Text = editName
         ListView1.SelectedItems.Item(0).SubItems(1).Text = editAddress
         ListView1.SelectedItems.Item(0).SubItems(2).Text = editPort
+        ListView1.SelectedItems.Item(0).Tag = editName & ":" & editAddress & ":" & editPort
+        updateTrayList()
     End Sub
 End Class
