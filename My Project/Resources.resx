@@ -117,12 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="frmAddProxy_error" xml:space="preserve">
+    <value>The proxy address or proxy port was mistake</value>
+  </data>
+  <data name="frmMain_canceloruncomp" xml:space="preserve">
+    <value>Can't change</value>
+  </data>
+  <data name="frmMain_closeproxy" xml:space="preserve">
+    <value>Close the proxy before exit?</value>
+  </data>
+  <data name="frmMain_exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="frmMain_exitcomfirm" xml:space="preserve">
+    <value>You sure to exit?</value>
+  </data>
+  <data name="frmMain_proxyisusing" xml:space="preserve">
+    <value>The proxy is using</value>
+  </data>
+  <data name="frmMain_uncomplete" xml:space="preserve">
+    <value>The data is not enough to add a new item</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\green.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="main" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\main.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mdTPLM_disabled" xml:space="preserve">
+    <value>Proxy Disabled</value>
+  </data>
+  <data name="mdTPLM_disableproxy" xml:space="preserve">
+    <value>Disable Proxy</value>
+  </data>
+  <data name="mdTPLM_head_proxy" xml:space="preserve">
+    <value>Proxy : </value>
+  </data>
+  <data name="mdTPLM_last_enable" xml:space="preserve">
+    <value> is enable</value>
+  </data>
+  <data name="mdUI_current" xml:space="preserve">
+    <value>Current Setting : </value>
+  </data>
+  <data name="mdUI_disable" xml:space="preserve">
+    <value>[Disable]</value>
+  </data>
+  <data name="mdUI_enable" xml:space="preserve">
+    <value>[Enable]</value>
+  </data>
+  <data name="mdUI_none" xml:space="preserve">
+    <value>None</value>
   </data>
   <data name="red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\red.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

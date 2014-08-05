@@ -2,6 +2,12 @@
 Imports Microsoft.VisualBasic.FileIO.FileSystem
 Module mdConfig
     Public binPath As String
+    Public IsEnglish As Boolean
+    Public Sub checkCulture()
+        If System.Threading.Thread.CurrentThread.CurrentUICulture.LCID <> 2052 Then
+            IsEnglish = True
+        End If
+    End Sub
     Public Sub writeBINConfig()
         Dim writeString As String = ""
         Try

@@ -33,20 +33,20 @@ Module mdUI
     Public Sub updateStatus()
         updateTrayList()
         getStr = funcGetRegeditValue("ProxyServer")
-        If getStr = "" Then getStr = "无"
+        If getStr = "" Then getStr = IIf(IsEnglish, My.Resources.mdUI_none, "无")
         getEnable = funcGetRegeditValue("ProxyEnable")
         With frmMain
             Select Case getEnable
                 Case 0
-                    getEnable = "[未启用]"
+                    getEnable = IIf(IsEnglish, My.Resources.mdUI_disable, "[未启用]")
                     .btnProxyDisable.Enabled = False
                     .notifyIcon.Icon = My.Resources.red
                 Case 1
-                    getEnable = "[已启用]"
+                    getEnable = IIf(IsEnglish, My.Resources.mdUI_enable, "[已启用]")
                     .btnProxyDisable.Enabled = True
                     .notifyIcon.Icon = My.Resources.green
             End Select
-            .lbInfo.Text = shortString("当前设置为：" & getEnable & " - " & getStr)
+            .lbInfo.Text = shortString(IIf(IsEnglish, My.Resources.mdUI_current, "当前设置为：") & getEnable & " - " & getStr)
             .Text = Application.ProductName & " - " & Application.ProductVersion
             .notifyIcon.Text = .Text & vbCrLf & .lbInfo.Text
         End With

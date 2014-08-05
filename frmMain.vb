@@ -6,6 +6,7 @@ Public Class frmMain
         writeBINConfig()
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        checkCulture()
         binFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\Proxy Manager\"
         If DirectoryExists(binFolder) = False Then MkDir(binFolder)
         binPath = binFolder & "proxylist.bin"
@@ -26,7 +27,7 @@ Public Class frmMain
         ipPort = ""
         If showEditDialog(ipAddr, ipPort, nameStr) = False Then Exit Sub
         If nameStr = "" Or ipAddr = "" Or ipPort = "" Then
-            MsgBox("数据不完整")
+            MsgBox(IIf(IsEnglish, My.Resources.frmMain_uncomplete, "数据不完整"))
             Exit Sub
         End If
         Dim listContext As New ListViewItem
@@ -72,9 +73,11 @@ Public Class frmMain
 
     Private Function appExit() As Boolean
         updateStatus()
-        If MsgBox("确定退出？", MsgBoxStyle.OkCancel, "退出") = MsgBoxResult.Cancel Then Return False
+        If MsgBox(IIf(IsEnglish, My.Resources.frmMain_exitcomfirm, "确认退出？"), _
+                  MsgBoxStyle.OkCancel, IIf(IsEnglish, My.Resources.frmMain_exit, "退出")) = MsgBoxResult.Cancel Then Return False
         If btnProxyDisable.Enabled = True Then
-            If MsgBox("是否关闭代理？", MsgBoxStyle.YesNo, "当前正在使用代理") = MsgBoxResult.Yes Then
+            If MsgBox(IIf(IsEnglish, My.Resources.frmMain_closeproxy, "是否关闭代理？"), MsgBoxStyle.YesNo, _
+                      IIf(IsEnglish, My.Resources.frmMain_proxyisusing, "当前正在使用代理")) = MsgBoxResult.Yes Then
                 cancelProxy()
             End If
         End If
@@ -102,7 +105,7 @@ Public Class frmMain
         editAddress = ListView1.SelectedItems.Item(0).SubItems(1).Text
         editPort = ListView1.SelectedItems.Item(0).SubItems(2).Text
         If showEditDialog(editAddress, editPort, editName, editAddress, editPort, editName) = False Then
-            MsgBox("取消或者数据不完整")
+            MsgBox(IIf(IsEnglish, My.Resources.frmMain_canceloruncomp, "取消或者数据不完整"))
             Exit Sub
         End If
         ListView1.SelectedItems.Item(0).SubItems(0).Text = editName

@@ -133,42 +133,29 @@
     <value>Port</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cmsRightClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 48</value>
+  </data>
+  <data name="menuEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 22</value>
+  </data>
+  <data name="menuEdit.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="menuDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 22</value>
+  </data>
+  <data name="menuDelete.Text" xml:space="preserve">
+    <value>DELETE</value>
+  </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>293, 12</value>
   </data>
   <data name="Label1.Text" xml:space="preserve">
     <value>Double click to enable the selected proxy config</value>
   </data>
-  <data name="tsmiAbout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        CcT1b4uQvwC6ghsNvEQhsAAAAABJRU5ErkJggg==
-</value>
+  <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 76</value>
   </data>
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -335,6 +322,58 @@
         AAAAPwAA/gAAAAB/AAD+AAAAQH8AAP///////wAA////////AAD///////8AAP///////wAA////////
         AAA=
 </value>
+  </data>
+  <data name="tsmiProxyList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 22</value>
+  </data>
+  <data name="tsmiProxyList.Text" xml:space="preserve">
+    <value>Proxy Settings</value>
+  </data>
+  <data name="ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 6</value>
+  </data>
+  <data name="tsmiExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 22</value>
+  </data>
+  <data name="tsmiExit.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="tsmiAbout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        CcT1b4uQvwC6ghsNvEQhsAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tsmiAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 22</value>
+  </data>
+  <data name="tsmiAbout.Text" xml:space="preserve">
+    <value>About</value>
   </data>
   <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 12</value>

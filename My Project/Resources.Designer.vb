@@ -61,25 +61,160 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  查找类似 The proxy address or proxy port was mistake 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property frmAddProxy_error() As String
+            Get
+                Return ResourceManager.GetString("frmAddProxy_error", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查找类似 Can&apos;t change 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property frmMain_canceloruncomp() As String
+            Get
+                Return ResourceManager.GetString("frmMain_canceloruncomp", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查找类似 Close the proxy before exit? 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property frmMain_closeproxy() As String
+            Get
+                Return ResourceManager.GetString("frmMain_closeproxy", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查找类似 Exit 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property frmMain_exit() As String
+            Get
+                Return ResourceManager.GetString("frmMain_exit", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查找类似 You sure to exit? 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property frmMain_exitcomfirm() As String
+            Get
+                Return ResourceManager.GetString("frmMain_exitcomfirm", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查找类似 The proxy is using 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property frmMain_proxyisusing() As String
+            Get
+                Return ResourceManager.GetString("frmMain_proxyisusing", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查找类似 The data is not enough to add a new item 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property frmMain_uncomplete() As String
+            Get
+                Return ResourceManager.GetString("frmMain_uncomplete", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
         '''  查找类似于 (Icon) 的 System.Drawing.Icon 类型的本地化资源。
         '''</summary>
         Friend ReadOnly Property green() As System.Drawing.Icon
             Get
                 Dim obj As Object = ResourceManager.GetObject("green", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Return CType(obj, System.Drawing.Icon)
             End Get
         End Property
-        
+
         '''<summary>
         '''  查找类似于 (Icon) 的 System.Drawing.Icon 类型的本地化资源。
         '''</summary>
         Friend ReadOnly Property main() As System.Drawing.Icon
             Get
                 Dim obj As Object = ResourceManager.GetObject("main", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Return CType(obj, System.Drawing.Icon)
             End Get
         End Property
-        
+
+        '''<summary>
+        '''  查找类似 Proxy Disabled 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property mdTPLM_disabled() As String
+            Get
+                Return ResourceManager.GetString("mdTPLM_disabled", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查找类似 Disable Proxy 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property mdTPLM_disableproxy() As String
+            Get
+                Return ResourceManager.GetString("mdTPLM_disableproxy", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查找类似 Proxy :  的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property mdTPLM_head_proxy() As String
+            Get
+                Return ResourceManager.GetString("mdTPLM_head_proxy", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查找类似  is enable 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property mdTPLM_last_enable() As String
+            Get
+                Return ResourceManager.GetString("mdTPLM_last_enable", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查找类似 Current Setting :  的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property mdUI_current() As String
+            Get
+                Return ResourceManager.GetString("mdUI_current", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查找类似 [Disable] 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property mdUI_disable() As String
+            Get
+                Return ResourceManager.GetString("mdUI_disable", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查找类似 [Enable] 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property mdUI_enable() As String
+            Get
+                Return ResourceManager.GetString("mdUI_enable", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查找类似 None 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property mdUI_none() As String
+            Get
+                Return ResourceManager.GetString("mdUI_none", resourceCulture)
+            End Get
+        End Property
+
         '''<summary>
         '''  查找类似于 (Icon) 的 System.Drawing.Icon 类型的本地化资源。
         '''</summary>
