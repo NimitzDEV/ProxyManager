@@ -91,6 +91,7 @@ Partial Class frmAddProxy
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmAddProxy"
         Me.ShowInTaskbar = False
+        Me.TopMost = True
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

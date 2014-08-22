@@ -25,14 +25,11 @@
         wbInfo.Navigate(gs(0))
     End Sub
     Private Sub wbInfo_OK()
-        docString = wbInfo.DocumentText.Split(spliter, StringSplitOptions.RemoveEmptyEntries)(1)
-        Debug.Print(docString)
+        docString = wbInfo.DocumentText.Split(spliter, StringSplitOptions.RemoveEmptyEntries)(1).Trim
+        If docString = "" Then Exit Sub
         loadAd()
     End Sub
     Private Sub loadAd()
         adList = docString.Split(spliter2, StringSplitOptions.RemoveEmptyEntries)
-        For i = 0 To adList.Count - 1
-            Debug.Print(adList(i))
-        Next
     End Sub
 End Module

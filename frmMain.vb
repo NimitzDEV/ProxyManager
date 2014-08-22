@@ -128,7 +128,9 @@ Public Class frmMain
     End Sub
 
     Private Sub tmrAdPlayer_Tick(sender As Object, e As EventArgs) Handles tmrAdPlayer.Tick
+        If adList Is Nothing Then Exit Sub
         If adList.Count = 0 Then Exit Sub
+        If adList(0) = "" Then Exit Sub
         If adCounter = adList.Count Then adCounter = 0
         llbAd.Text = Split(adList(adCounter), "∫")(0)
         llbAd.Tag = Split(adList(adCounter), "∫")(1)
