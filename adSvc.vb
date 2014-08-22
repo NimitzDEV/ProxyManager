@@ -6,6 +6,7 @@
     Dim spliter2() As String = {"≠"}
     Public adList() As String
     Public Sub getAd()
+        If System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable = False Then Exit Sub
         wbStart = New WebBrowser
         wbInfo = New WebBrowser
         wbStart.ScriptErrorsSuppressed = True
