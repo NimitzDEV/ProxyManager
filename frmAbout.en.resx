@@ -130,14 +130,11 @@
   <data name="LinkLabel2.Text" xml:space="preserve">
     <value>Weibo</value>
   </data>
-  <data name="LinkLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 12</value>
-  </data>
-  <data name="LinkLabel1.Text" xml:space="preserve">
-    <value>Source Code</value>
-  </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Close</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>430, 283</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>About</value>
