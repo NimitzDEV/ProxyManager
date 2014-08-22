@@ -44,6 +44,9 @@ Partial Class frmMain
         Me.cmsList = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.tmrAdPlayer = New System.Windows.Forms.Timer(Me.components)
+        Me.llbAd = New System.Windows.Forms.LinkLabel()
+        Me.llbUpdate = New System.Windows.Forms.LinkLabel()
         Me.cmsRightClick.SuspendLayout()
         Me.cmsTray.SuspendLayout()
         Me.SuspendLayout()
@@ -67,10 +70,10 @@ Partial Class frmMain
         '
         'ListView1
         '
-        resources.ApplyResources(Me.ListView1, "ListView1")
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
+        resources.ApplyResources(Me.ListView1, "ListView1")
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.UseCompatibleStateImageBehavior = False
@@ -90,19 +93,19 @@ Partial Class frmMain
         '
         'cmsRightClick
         '
-        resources.ApplyResources(Me.cmsRightClick, "cmsRightClick")
         Me.cmsRightClick.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuEdit, Me.menuDelete})
         Me.cmsRightClick.Name = "cmsRightClick"
+        resources.ApplyResources(Me.cmsRightClick, "cmsRightClick")
         '
         'menuEdit
         '
-        resources.ApplyResources(Me.menuEdit, "menuEdit")
         Me.menuEdit.Name = "menuEdit"
+        resources.ApplyResources(Me.menuEdit, "menuEdit")
         '
         'menuDelete
         '
-        resources.ApplyResources(Me.menuDelete, "menuDelete")
         Me.menuDelete.Name = "menuDelete"
+        resources.ApplyResources(Me.menuDelete, "menuDelete")
         '
         'Label1
         '
@@ -111,29 +114,29 @@ Partial Class frmMain
         '
         'notifyIcon
         '
-        resources.ApplyResources(Me.notifyIcon, "notifyIcon")
         Me.notifyIcon.ContextMenuStrip = Me.cmsTray
+        resources.ApplyResources(Me.notifyIcon, "notifyIcon")
         '
         'cmsTray
         '
-        resources.ApplyResources(Me.cmsTray, "cmsTray")
         Me.cmsTray.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiProxyList, Me.ToolStripMenuItem1, Me.tsmiExit, Me.tsmiAbout})
         Me.cmsTray.Name = "cmsTray"
+        resources.ApplyResources(Me.cmsTray, "cmsTray")
         '
         'tsmiProxyList
         '
-        resources.ApplyResources(Me.tsmiProxyList, "tsmiProxyList")
         Me.tsmiProxyList.Name = "tsmiProxyList"
+        resources.ApplyResources(Me.tsmiProxyList, "tsmiProxyList")
         '
         'ToolStripMenuItem1
         '
-        resources.ApplyResources(Me.ToolStripMenuItem1, "ToolStripMenuItem1")
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        resources.ApplyResources(Me.ToolStripMenuItem1, "ToolStripMenuItem1")
         '
         'tsmiExit
         '
-        resources.ApplyResources(Me.tsmiExit, "tsmiExit")
         Me.tsmiExit.Name = "tsmiExit"
+        resources.ApplyResources(Me.tsmiExit, "tsmiExit")
         '
         'tsmiAbout
         '
@@ -142,8 +145,8 @@ Partial Class frmMain
         '
         'cmsList
         '
-        resources.ApplyResources(Me.cmsList, "cmsList")
         Me.cmsList.Name = "cmsList"
+        resources.ApplyResources(Me.cmsList, "cmsList")
         '
         'Label2
         '
@@ -156,10 +159,29 @@ Partial Class frmMain
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.TabStop = True
         '
+        'tmrAdPlayer
+        '
+        Me.tmrAdPlayer.Enabled = True
+        Me.tmrAdPlayer.Interval = 6000
+        '
+        'llbAd
+        '
+        resources.ApplyResources(Me.llbAd, "llbAd")
+        Me.llbAd.Name = "llbAd"
+        Me.llbAd.TabStop = True
+        '
+        'llbUpdate
+        '
+        resources.ApplyResources(Me.llbUpdate, "llbUpdate")
+        Me.llbUpdate.Name = "llbUpdate"
+        Me.llbUpdate.TabStop = True
+        '
         'frmMain
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.llbUpdate)
+        Me.Controls.Add(Me.llbAd)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -170,6 +192,7 @@ Partial Class frmMain
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frmMain"
+        Me.TopMost = True
         Me.cmsRightClick.ResumeLayout(False)
         Me.cmsTray.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -196,5 +219,8 @@ Partial Class frmMain
     Friend WithEvents cmsList As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
+    Friend WithEvents tmrAdPlayer As System.Windows.Forms.Timer
+    Friend WithEvents llbAd As System.Windows.Forms.LinkLabel
+    Friend WithEvents llbUpdate As System.Windows.Forms.LinkLabel
 
 End Class

@@ -72,6 +72,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adSvc.vb" />
     <Compile Include="frmAppMsg.Designer.vb">
       <DependentUpon>frmAppMsg.vb</DependentUpon>
     </Compile>
@@ -95,6 +96,12 @@
     </Compile>
     <Compile Include="frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdate.designer.vb">
+      <DependentUpon>frmUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdate.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mdProxy.vb" />
@@ -142,6 +149,9 @@
     <EmbeddedResource Include="frmMain.zh-CN.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdate.resx">
+      <DependentUpon>frmUpdate.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -175,6 +185,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\red.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\new64px.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\uptodate64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\wait64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\new64px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

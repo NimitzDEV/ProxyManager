@@ -169,7 +169,16 @@
   <data name="mdUI_none" xml:space="preserve">
     <value>None</value>
   </data>
+  <data name="new64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\new64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\red.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="uptodate64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\uptodate64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wait64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\wait64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

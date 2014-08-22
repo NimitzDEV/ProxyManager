@@ -1,10 +1,15 @@
 ﻿Imports Microsoft.VisualBasic.FileIO.FileSystem
 Public Class frmMain
     Dim binFolder As String
+    Dim adCounter As Integer
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        If appExit() = False Then e.Cancel = True
-        writeBINConfig()
+        e.Cancel = True
+        Me.Hide()
+        notifyIcon.BalloonTipTitle = Me.Text
+        notifyIcon.BalloonTipText = "界面已经隐藏，点击图标显示" & vbCrLf & "右键显示快速菜单"
+        notifyIcon.ShowBalloonTip(3000)
     End Sub
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         checkCulture()
         binFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\Proxy Manager\"
@@ -12,6 +17,8 @@ Public Class frmMain
         binPath = binFolder & "proxylist.bin"
         readBINConfig()
         updateStatus()
+        llbAd.Text = ""
+        getAd()
     End Sub
 
     Private Sub btnProxyDisable_Click(sender As Object, e As EventArgs) Handles btnProxyDisable.Click
@@ -63,11 +70,16 @@ Public Class frmMain
     Private Sub notifyIcon_MouseClick(sender As Object, e As MouseEventArgs) Handles notifyIcon.MouseClick
         If e.Button <> Windows.Forms.MouseButtons.Left Then Exit Sub
         Me.Visible = Not Me.Visible
+        If Me.Visible = False Then
+            notifyIcon.BalloonTipTitle = Me.Text
+            notifyIcon.BalloonTipText = "界面已经隐藏，点击图标显示" & vbCrLf & "右键显示快速菜单"
+            notifyIcon.ShowBalloonTip(3000)
+        End If
     End Sub
 
 
     Private Sub tsmiExit_Click(sender As Object, e As EventArgs) Handles tsmiExit.Click
-        Me.Close()
+        If appExit() = True Then Me.Dispose()
     End Sub
 
 
@@ -114,4 +126,23 @@ Public Class frmMain
         ListView1.SelectedItems.Item(0).Tag = editName & ":" & editAddress & ":" & editPort
         updateTrayList()
     End Sub
+
+    Private Sub tmrAdPlayer_Tick(sender As Object, e As EventArgs) Handles tmrAdPlayer.Tick
+        If adList.Count = 0 Then Exit Sub
+        If adCounter = adList.Count Then adCounter = 0
+        llbAd.Text = Split(adList(adCounter), "∫")(0)
+        llbAd.Tag = Split(adList(adCounter), "∫")(1)
+        adCounter += 1
+    End Sub
+
+    Private Sub llbAd_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbAd.LinkClicked
+        Process.Start(llbAd.Tag)
+    End Sub
+
+    Private Sub llbUpdate_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbUpdate.LinkClicked
+        frmUpdate.ShowDialog()
+        frmUpdate.Dispose()
+    End Sub
+
+
 End Class
