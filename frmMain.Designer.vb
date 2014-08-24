@@ -162,7 +162,7 @@ Partial Class frmMain
         'tmrAdPlayer
         '
         Me.tmrAdPlayer.Enabled = True
-        Me.tmrAdPlayer.Interval = 6000
+        Me.tmrAdPlayer.Interval = 1000
         '
         'llbAd
         '

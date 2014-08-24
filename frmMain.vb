@@ -2,6 +2,7 @@
 Public Class frmMain
     Dim binFolder As String
     Dim adCounter As Integer
+    Dim sixCounter As Integer
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         e.Cancel = True
         Me.Hide()
@@ -19,6 +20,7 @@ Public Class frmMain
         updateStatus()
         llbAd.Text = ""
         getAd()
+        Me.Height = 351
     End Sub
 
     Private Sub btnProxyDisable_Click(sender As Object, e As EventArgs) Handles btnProxyDisable.Click
@@ -131,10 +133,15 @@ Public Class frmMain
         If adList Is Nothing Then Exit Sub
         If adList.Count = 0 Then Exit Sub
         If adList(0) = "" Then Exit Sub
-        If adCounter = adList.Count Then adCounter = 0
+        sixCounter += 1
         llbAd.Text = Split(adList(adCounter), "∫")(0)
         llbAd.Tag = Split(adList(adCounter), "∫")(1)
-        adCounter += 1
+        If sixCounter > 6 Then
+            adCounter += 1
+            If adCounter = adList.Count Then adCounter = 0
+            sixCounter = 0
+        End If
+        Me.Height = 373
     End Sub
 
     Private Sub llbAd_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbAd.LinkClicked
