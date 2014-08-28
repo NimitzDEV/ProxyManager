@@ -18,9 +18,6 @@ Public Class frmMain
         binPath = binFolder & "proxylist.bin"
         readBINConfig()
         updateStatus()
-        llbAd.Text = ""
-        getAd()
-        Me.Height = 351
     End Sub
 
     Private Sub btnProxyDisable_Click(sender As Object, e As EventArgs) Handles btnProxyDisable.Click
@@ -81,7 +78,11 @@ Public Class frmMain
 
 
     Private Sub tsmiExit_Click(sender As Object, e As EventArgs) Handles tsmiExit.Click
-        If appExit() = True Then Me.Dispose()
+        If appExit() = True Then
+            writeBINConfig()
+            Me.Dispose()
+        End If
+
     End Sub
 
 
@@ -129,24 +130,6 @@ Public Class frmMain
         updateTrayList()
     End Sub
 
-    Private Sub tmrAdPlayer_Tick(sender As Object, e As EventArgs) Handles tmrAdPlayer.Tick
-        If adList Is Nothing Then Exit Sub
-        If adList.Count = 0 Then Exit Sub
-        If adList(0) = "" Then Exit Sub
-        sixCounter += 1
-        llbAd.Text = Split(adList(adCounter), "∫")(0)
-        llbAd.Tag = Split(adList(adCounter), "∫")(1)
-        If sixCounter > 6 Then
-            adCounter += 1
-            If adCounter = adList.Count Then adCounter = 0
-            sixCounter = 0
-        End If
-        Me.Height = 373
-    End Sub
-
-    Private Sub llbAd_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbAd.LinkClicked
-        Process.Start(llbAd.Tag)
-    End Sub
 
     Private Sub llbUpdate_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbUpdate.LinkClicked
         frmUpdate.ShowDialog()
