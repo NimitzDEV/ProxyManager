@@ -9,22 +9,23 @@
     Private Sub frmUpdate_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Height = 128
         Me.Top = frmMain.Top
-        wbStart.Navigate("http://nimitzdev.free3v.net/update/update_dlljgl.txt")
+        wbStart.Navigate("http://nimitzdev.free3v.net/update/update_dlljgl.html")
         PictureBox1.Image = My.Resources.wait64px
     End Sub
 
     Private Sub wbStart_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbStart.DocumentCompleted
-        Dim gs() As String = (From mt As HtmlElement In wbStart.Document.Links Select System.Text.RegularExpressions.Regex.Match(mt.OuterHtml, "http://[^\x22 >]+").Value).ToArray
-        If gs.Count = 0 Then
-            MsgBox("噢~真不好意思~服务器打了一下小瞌睡，重新试一次叫醒她")
-            Me.Close()
-            Exit Sub
-        End If
-        wbInfo.Navigate(gs(0))
+        'Dim gs() As String = (From mt As HtmlElement In wbStart.Document.Links Select System.Text.RegularExpressions.Regex.Match(mt.OuterHtml, "http://[^\x22 >]+").Value).ToArray
+        'If gs.Count = 0 Then
+        '    MsgBox("噢~真不好意思~服务器打了一下小瞌睡，重新试一次叫醒她")
+        '    Me.Close()
+        '    Exit Sub
+        'End If
+        'wbInfo.Navigate(gs(0))
+        wbInfo.Navigate("http://nimitzdev.free3v.net/update/update_dlljgl.html")
     End Sub
 
     Private Sub wbInfo_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbInfo.DocumentCompleted
-        docString = wbInfo.DocumentText
+        docString = New System.IO.StreamReader(wbInfo.DocumentStream, System.Text.Encoding.Default).ReadToEnd
         versionString = Split(docString, "≡")(1).Trim
         updateString = Split(docString, "≡")(2).Trim
         linkString = Split(docString, "≡")(3).Trim
